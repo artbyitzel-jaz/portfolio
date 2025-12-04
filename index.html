@@ -1,1 +1,482 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Net Art Portfolio - Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #9b6ba8;
+            --secondary-color: #d4b5d8;
+            --accent-color: #e8a0d8;
+            --dark-color: #6b4c7a;
+            --light-bg: #f5f3f9;
+            --white: #ffffff;
+        }
+
+        * {
+            font-family: 'Courier New', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            box-shadow: 0 6px 15px rgba(155, 107, 168, 0.3);
+            border-bottom: 3px dashed var(--accent-color);
+        }
+
+        .navbar-brand {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--white) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 700;
+            margin: 0 8px;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+            transform: scale(1.05);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(180deg, var(--light-bg) 0%, #e8d8f0 100%);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px var(--secondary-color);
+            font-weight: 900;
+            letter-spacing: 2px;
+            animation: slideInDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            animation: slideInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== PORTFOLIO GRID ===== */
+        .portfolio-section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 0px var(--secondary-color);
+            font-weight: 900;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border: 4px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(155, 107, 168, 0.15);
+            overflow: hidden;
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-15px) rotate(-2deg) scale(1.05);
+            box-shadow: 0 15px 40px rgba(155, 107, 168, 0.25);
+            border-color: var(--accent-color);
+        }
+
+        .portfolio-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .portfolio-card h3 {
+            color: var(--primary-color);
+            font-size: 26px;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-card p {
+            color: var(--dark-color);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .btn-view {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn-view:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 3px dotted var(--accent-color);
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== GLITCH EFFECT ===== */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            animation: glitch-1 0.4s infinite;
+            color: var(--accent-color);
+            z-index: -1;
+            text-shadow: -3px 0 var(--primary-color);
+        }
+
+        .glitch::after {
+            animation: glitch-2 0.4s infinite;
+            color: var(--secondary-color);
+            z-index: -2;
+            text-shadow: 3px 0 var(--accent-color);
+        }
+
+        @keyframes glitch-1 {
+            0%, 100% { clip-path: inset(0 0 0 0); }
+            20% { clip-path: inset(60% 0 20% 0); }
+            40% { clip-path: inset(50% 0 30% 0); }
+            60% { clip-path: inset(10% 0 60% 0); }
+            80% { clip-path: inset(40% 0 20% 0); }
+        }
+
+        @keyframes glitch-2 {
+            0%, 100% { clip-path: inset(0 0 0 0); }
+            20% { clip-path: inset(10% 0 70% 0); }
+            40% { clip-path: inset(40% 0 30% 0); }
+            60% { clip-path: inset(30% 0 50% 0); }
+            80% { clip-path: inset(20% 0 40% 0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .nav-link {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">✨ Net Art Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../logo.html">Logo</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../glitch-art.html">Glitch Art</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../meme.html">Meme</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../virtual-space.html">Virtual Space</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../3d-print.html">3D Print</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../net-art.html">Net Art</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HOME PAGE ===== -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Welcome">✨ Welcome ✨</h1>
+            <p>Explore a collection of digital art and creative explorations in the world of net art</p>
+        </div>
+    </div>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <div class="portfolio-section">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">🎨</span>
+                    <h3>Logo</h3>
+                    <p>Personal branding and logo design explorations</p>
+                    <a href="logo.html" class="btn-view">View Project</a>
+                        <a href="../logo.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">⚡</span>
+                    <h3>Glitch Art</h3>
+                    <p>Digital distortion and experimental glitch effects</p>
+                    <a href="glitch-art.html" class="btn-view">View Project</a>
+                        <a href="../glitch-art.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">😄</span>
+                    <h3>Meme</h3>
+                    <p>Witty and creative meme creations from internet culture</p>
+                    <a href="meme.html" class="btn-view">View Project</a>
+                        <a href="../meme.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">🌐</span>
+                    <h3>Virtual Space</h3>
+                    <p>Immersive digital environments and alternative realities</p>
+                    <a href="virtual-space.html" class="btn-view">View Project</a>
+                        <a href="../virtual-space.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">🖨️</span>
+                    <h3>3D Print</h3>
+                    <p>Three-dimensional designs brought to physical reality</p>
+                    <a href="3d-print.html" class="btn-view">View Project</a>
+                        <a href="../3d-print.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <span class="portfolio-icon">🕸️</span>
+                    <h3>Net Art</h3>
+                    <p>Web-based art celebrating internet culture and creativity</p>
+                    <a href="net-art.html" class="btn-view">View Project</a>
+                        <a href="../net-art.html" class="btn-view">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Digital Art Portfolio. All rights reserved. ✨</p>
+        <p>Contact: <a href="mailto:hello@example.com">hello@example.com</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
