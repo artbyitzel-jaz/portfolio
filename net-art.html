@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Net Art - Net Art Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #9b6ba8;
+            --secondary-color: #d4b5d8;
+            --accent-color: #e8a0d8;
+            --dark-color: #6b4c7a;
+            --light-bg: #f5f3f9;
+            --white: #ffffff;
+        }
+
+        * {
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            box-shadow: 0 6px 15px rgba(155, 107, 168, 0.3);
+            border-bottom: 3px dashed var(--accent-color);
+        }
+
+        .navbar-brand {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--white) !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 700;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .project-detail {
+            min-height: 600px;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--light-bg) 0%, #e8d8f0 100%);
+        }
+
+        .detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 4px dashed var(--secondary-color);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(155, 107, 168, 0.15);
+        }
+
+        .detail-container h1 {
+            color: var(--primary-color);
+            font-size: 42px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px var(--secondary-color);
+            font-weight: 900;
+        }
+
+        .detail-container p {
+            color: var(--dark-color);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateX(-5px);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 3px dotted var(--accent-color);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .detail-container {
+                padding: 30px;
+            }
+
+            .detail-container h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">✨ Net Art Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logo.html">Logo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="glitch-art.html">Glitch Art</a></li>
+                    <li class="nav-item"><a class="nav-link" href="meme.html">Meme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="virtual-space.html">Virtual Space</a></li>
+                    <li class="nav-item"><a class="nav-link" href="3d-print.html">3D Print</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="net-art.html">Net Art</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="project-detail">
+        <div class="detail-container">
+            <h1>🕸️ Net Art</h1>
+            <p>Welcome to my Net Art exploration! This project celebrates web-based artistic expression and internet-native creativity that exists only in the digital realm.</p>
+            
+            <p>Net art is a form of artistic practice that uses the internet itself as both canvas and medium. It embraces hypertext, interactivity, networks, and the unique characteristics of web technologies to create works that couldn't exist anywhere else.</p>
+            
+            <p>My net art projects explore themes of digital identity, online culture, connectivity, and the democratic nature of internet expression. Each piece takes advantage of the web's unique properties—its interactivity, hypertextuality, and global reach—to create meaningful artistic experiences.</p>
+            
+            <p>These works challenge traditional notions of where art exists and who can create it. Net art represents a revolution in artistic practice where technology is not just a tool, but an integral part of the work itself. It's art that lives online and invites participation from viewers around the world.</p>
+            
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Digital Art Portfolio. All rights reserved. ✨</p>
+        <p>Contact: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
