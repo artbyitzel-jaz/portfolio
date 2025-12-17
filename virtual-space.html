@@ -3,169 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Virtual Space - Net Art Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cute Pink Website</title>
     <style>
-        :root {
-            --primary-color: #9b6ba8;
-            --secondary-color: #d4b5d8;
-            --accent-color: #e8a0d8;
-            --dark-color: #6b4c7a;
-            --light-bg: #f5f3f9;
-            --white: #ffffff;
-        }
-
-        * {
-            font-family: 'Courier New', monospace;
-        }
-
+        /* CSS styles go here */
         body {
-            background-color: var(--light-bg);
-            color: var(--dark-color);
+            background-color: #FDE4F2; /* Very light pink/off-white background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #404040; /* Dark grey for readability */
         }
 
-        .navbar {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
-            box-shadow: 0 6px 15px rgba(155, 107, 168, 0.3);
-            border-bottom: 3px dashed var(--accent-color);
+        .container {
+            background-color: #FFFFFF; /* White container background */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
         }
 
-        .navbar-brand {
-            font-size: 26px;
-            font-weight: bold;
-            color: var(--white) !important;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            letter-spacing: 2px;
+        h1 {
+            color: #EEA1CD; /* Medium pink for main heading */
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
 
-        .nav-link {
-            color: var(--white) !important;
-            font-weight: 700;
-            margin: 0 8px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-color) !important;
-        }
-
-        .project-detail {
-            min-height: 600px;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, var(--light-bg) 0%, #e8d8f0 100%);
-        }
-
-        .detail-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            border: 4px dashed var(--secondary-color);
-            border-radius: 25px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(155, 107, 168, 0.15);
-        }
-
-        .detail-container h1 {
-            color: var(--primary-color);
-            font-size: 42px;
-            margin-bottom: 25px;
-            text-shadow: 2px 2px 0px var(--secondary-color);
-            font-weight: 900;
-        }
-
-        .detail-container p {
-            color: var(--dark-color);
-            font-size: 17px;
-            line-height: 1.8;
+        p {
+            color: #757575; /* Lighter grey for body text */
+            font-size: 1.1em;
+            line-height: 1.4;
             margin-bottom: 20px;
         }
 
-        .back-button {
+        .pink-button {
+            background-color: #FF69B4; /* Hot pink button color */
+            color: #FFFFFF;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px; /* Pill shape for "cuteness" */
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
             display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
         }
 
-        .back-button:hover {
-            background: var(--white);
-            color: var(--primary-color);
-            transform: translateX(-5px);
-        }
-
-        footer {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            border-top: 3px dotted var(--accent-color);
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .detail-container {
-                padding: 30px;
-            }
-
-            .detail-container h1 {
-                font-size: 32px;
-            }
+        .pink-button:hover {
+            background-color: #FF46A2; /* Slightly darker pink on hover */
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand" href="index.html">✨ Net Art Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logo.html">Logo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="glitch-art.html">Glitch Art</a></li>
-                    <li class="nav-item"><a class="nav-link" href="meme.html">Meme</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="virtual-space.html">Virtual Space</a></li>
-                    <li class="nav-item"><a class="nav-link" href="3d-print.html">3D Print</a></li>
-                    <li class="nav-item"><a class="nav-link" href="net-art.html">Net Art</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="project-detail">
-        <div class="detail-container">
-            <h1>🌐 Virtual Space</h1>
-            <p>Welcome to my Virtual Space exploration! This project dives into the creation of immersive digital environments and alternative realities that exist purely in the digital realm.</p>
-            
-            <p>Virtual spaces represent infinite possibilities where the rules of the physical world don't apply. They're platforms for experimentation, identity exploration, and community building. In this project, I explore how digital spaces can be designed to evoke emotion and provoke thought.</p>
-            
-            <p>From abstract digital landscapes to interactive environments, each piece in this collection pushes the boundaries of what's possible in virtual media. These spaces challenge our understanding of presence, existence, and what it means to inhabit a digital environment.</p>
-            
-            <p>As our lives become increasingly intertwined with digital platforms, these virtual spaces become more important as places for self-expression, creativity, and connection. They represent the future of how we communicate and share experiences.</p>
-            
-            <a href="index.html" class="back-button">← Back to Home</a>
-        </div>
+    <div class="container">
+        <h1>Water Space</h1>
+        <p>This is a virtual space I made on New Art City. For my space, I wanted to create cohesive dream-like scenes with three songs I picked out. I knew I wanted to focus my space on water, so I added sea animals, and I tried keeping a similar color palette between objects. The whispy tentacles seemed very flowy, so I added a song by PinkPantheress: Ophelia that features a harp and is also based on Ophelia from Macbeth, who drowned (water). Above the jellyfish, there is a party vibe going on to contrast the story from below, so I added an upbeat song: Feelings, also by PinkPantheress. If you follow the cherry blossoms away from this scene, you'll find a hello kitty stuffed animal and some toy-like foods, accompanied by the song Sienna from The Marias. These objects represent childhood, and correlate to her song that talks about a daughter she never had. This song also reminded me of water because of her cover art for her album Submarine. </p>
+        <a href="#" class="pink-button">Explore More</a>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Digital Art Portfolio. All rights reserved. ✨</p>
-        <p>Contact: <a href="mailto:hello@example.com">hello@example.com</a></p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
